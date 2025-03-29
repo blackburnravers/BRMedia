@@ -3,9 +3,7 @@
  * BRMedia Custom Post Types
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-    exit;
-}
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 add_action( 'init', 'brmedia_register_post_types' );
 
@@ -25,13 +23,13 @@ function brmedia_register_post_types() {
             'not_found'          => __( 'No tracks found', 'brmedia' ),
             'not_found_in_trash' => __( 'No tracks in trash', 'brmedia' )
         ),
-        'public'             => true,
-        'has_archive'        => true,
-        'menu_icon'          => 'dashicons-format-audio',
-        'supports'           => array( 'title', 'editor', 'thumbnail' ),
-        'show_in_rest'       => true,
-        'rewrite'            => array( 'slug' => 'music' ),
-        'menu_position'      => 25
+        'public'            => true,
+        'has_archive'       => true,
+        'menu_icon'         => 'dashicons-format-audio',
+        'supports'          => array( 'title', 'editor', 'thumbnail' ),
+        'show_in_rest'      => true,
+        'rewrite'           => array( 'slug' => 'music' ),
+        'show_in_menu'      => 'brmedia-dashboard',
     ) );
 
     // Video CPT
@@ -48,12 +46,13 @@ function brmedia_register_post_types() {
             'not_found'          => __( 'No videos found', 'brmedia' ),
             'not_found_in_trash' => __( 'No videos in trash', 'brmedia' )
         ),
-        'public'             => true,
-        'has_archive'        => true,
-        'menu_icon'          => 'dashicons-format-video',
-        'supports'           => array( 'title', 'editor', 'thumbnail' ),
-        'show_in_rest'       => true,
-        'rewrite'            => array( 'slug' => 'videos' ),
-        'menu_position'      => 26
+        'public'            => true,
+        'has_archive'       => true,
+        'menu_icon'         => 'dashicons-format-video',
+        'supports'          => array( 'title', 'editor', 'thumbnail' ),
+        'show_in_rest'      => true,
+        'rewrite'           => array( 'slug' => 'videos' ),
+        'show_in_menu'      => 'brmedia-dashboard',
     ) );
+
 }
