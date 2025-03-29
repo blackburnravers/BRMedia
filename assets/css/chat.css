@@ -1,0 +1,68 @@
+/* BRMedia Chat Styles */
+
+.brmedia-chat-wrapper {
+  background: #f7f7f7;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 15px;
+  max-width: 100%;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+}
+
+.brmedia-chat-messages {
+  max-height: 300px;
+  overflow-y: auto;
+  padding-right: 5px;
+  margin-bottom: 15px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.brmedia-chat-message {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.brmedia-chat-message:last-child {
+  border-bottom: none;
+}
+
+.brmedia-chat-message .author {
+  font-weight: bold;
+  color: #3a7bd5;
+  margin-right: 5px;
+}
+
+.brmedia-chat-message .timestamp {
+  font-size: 11px;
+  color: #aaa;
+  float: right;
+}
+
+.brmedia-chat-form {
+  display: flex;
+  gap: 10px;
+}
+
+.brmedia-chat-form input[type="text"] {
+  flex: 1;
+  padding: 8px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.brmedia-chat-form button {
+  background: #3a7bd5;
+  border: none;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.brmedia-chat-form button:hover {
+  background: #2f66b4;
+}

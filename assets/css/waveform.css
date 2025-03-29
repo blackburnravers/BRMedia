@@ -1,0 +1,53 @@
+/* BRMedia Waveform Styles */
+
+.audio-waveform .brmedia-waveform-container {
+  width: 100%;
+  height: 70px;
+  background: #f2f2f2;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.audio-waveform canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.audio-waveform .brmedia-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.audio-waveform .brmedia-controls button {
+  background: #3a7bd5;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.audio-waveform .brmedia-controls button:hover {
+  background: #2d65af;
+}
+
+.audio-waveform .brmedia-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+@media screen and (max-width: 600px) {
+  .audio-waveform .brmedia-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

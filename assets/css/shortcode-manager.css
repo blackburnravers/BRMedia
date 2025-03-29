@@ -1,0 +1,51 @@
+/* BRMedia Shortcode Manager Styles */
+
+.brmedia-shortcodes h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.brmedia-shortcode-section {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 20px;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.brmedia-shortcode-section h2 {
+  font-size: 18px;
+  margin-top: 0;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 5px;
+}
+
+.brmedia-shortcode-section ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.brmedia-shortcode-section li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.brmedia-shortcode-section li:last-child {
+  border-bottom: none;
+}
+
+.brmedia-shortcode-section code {
+  background: #f2f2f2;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 13px;
+  color: #111;
+  user-select: all;
+}

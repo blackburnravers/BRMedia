@@ -1,0 +1,116 @@
+/* BRMedia Settings Styles */
+
+.brmedia-settings .nav-tab-wrapper {
+  margin-bottom: 0;
+  border-bottom: none;
+}
+
+.brmedia-tab-wrapper .nav-tab {
+  background: #f1f1f1;
+  border: 1px solid #ccc;
+  border-bottom: none;
+  margin-right: 5px;
+  border-radius: 6px 6px 0 0;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.brmedia-tab-wrapper .nav-tab-active {
+  background: #fff;
+  border-bottom: 1px solid #fff;
+}
+
+.brmedia-settings-section {
+  display: none;
+  background: #fff;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-top: none;
+  border-radius: 0 0 6px 6px;
+}
+
+.brmedia-settings-section.active {
+  display: block;
+}
+
+.brmedia-field {
+  margin-bottom: 20px;
+}
+
+.brmedia-field label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.brmedia-field input[type="text"],
+.brmedia-field input[type="number"],
+.brmedia-field select,
+.brmedia-field textarea {
+  width: 100%;
+  max-width: 500px;
+  padding: 8px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.brmedia-field .description {
+  font-size: 12px;
+  color: #666;
+  margin-top: 5px;
+}
+
+.brmedia-range-display {
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.brmedia-switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+.brmedia-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.brmedia-switch .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0;
+  right: 0; bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 24px;
+}
+
+.brmedia-switch .slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+.brmedia-switch input:checked + .slider {
+  background-color: #3a7bd5;
+}
+
+.brmedia-switch input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+.brmedia-settings-footer {
+  margin-top: 20px;
+}
