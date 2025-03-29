@@ -1,4 +1,3 @@
-
 <?php
 /**
  * BRMedia Admin Menu
@@ -16,6 +15,7 @@ class BRMedia_Admin_Menu {
     }
 
     public function register_admin_menu() {
+
         // Top-level menu
         add_menu_page(
             __( 'BRMedia', 'brmedia' ),
@@ -27,7 +27,7 @@ class BRMedia_Admin_Menu {
             3
         );
 
-        // Submenus
+        // Dashboard
         add_submenu_page(
             'brmedia-dashboard',
             __( 'Dashboard', 'brmedia' ),
@@ -37,6 +37,7 @@ class BRMedia_Admin_Menu {
             array( $this, 'render_dashboard' )
         );
 
+        // Settings
         add_submenu_page(
             'brmedia-dashboard',
             __( 'Settings', 'brmedia' ),
@@ -46,7 +47,7 @@ class BRMedia_Admin_Menu {
             array( $this, 'render_settings' )
         );
 
-        // Music section
+        // Divider - Music Section
         add_submenu_page(
             'brmedia-dashboard',
             __( 'Music', 'brmedia' ),
@@ -92,7 +93,7 @@ class BRMedia_Admin_Menu {
             ''
         );
 
-        // Video section
+        // Divider - Video Section
         add_submenu_page(
             'brmedia-dashboard',
             __( 'Video', 'brmedia' ),
@@ -138,7 +139,7 @@ class BRMedia_Admin_Menu {
             ''
         );
 
-        // Other tools
+        // Shortcodes
         add_submenu_page(
             'brmedia-dashboard',
             __( 'Shortcodes', 'brmedia' ),
@@ -148,6 +149,7 @@ class BRMedia_Admin_Menu {
             array( $this, 'render_shortcodes' )
         );
 
+        // Stats
         add_submenu_page(
             'brmedia-dashboard',
             __( 'Stats', 'brmedia' ),
@@ -159,19 +161,19 @@ class BRMedia_Admin_Menu {
     }
 
     public function render_dashboard() {
-        do_action( 'brmedia_admin_dashboard' );
+        echo '<h1>' . esc_html__( 'Dashboard Placeholder', 'brmedia' ) . '</h1>';
     }
 
     public function render_settings() {
-        do_action( 'brmedia_admin_settings' );
+        echo '<h1>' . esc_html__( 'Settings Placeholder', 'brmedia' ) . '</h1>';
     }
 
     public function render_shortcodes() {
-        do_action( 'brmedia_admin_shortcodes' );
+        echo '<h1>' . esc_html__( 'Shortcodes Placeholder', 'brmedia' ) . '</h1>';
     }
 
     public function render_stats() {
-        do_action( 'brmedia_admin_stats' );
+        echo '<h1>' . esc_html__( 'Stats Placeholder', 'brmedia' ) . '</h1>';
     }
 }
 
