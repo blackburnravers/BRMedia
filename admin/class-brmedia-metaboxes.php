@@ -61,13 +61,11 @@ class BRMedia_Metaboxes {
         <p>
             <label for="brmedia_tracklist"><strong><?php _e( 'Tracklist / Timestamps:', 'brmedia' ); ?></strong></label><br>
             <textarea name="brmedia_tracklist" id="brmedia_tracklist" class="widefat" rows="5"><?php echo esc_textarea( $tracklist ); ?></textarea>
-            <small><?php _e( 'Format: 00:00:00 Track Title – each on new line.', 'brmedia' ); ?></small>
+            <small><?php _e( 'Format: 00:00:00 Track Title – one per line.', 'brmedia' ); ?></small>
         </p>
 
         <p>
-            <button type="button" class="button brmedia-upload-tracklist" data-target="brmedia_tracklist">
-                <?php _e( 'Upload .txt File', 'brmedia' ); ?>
-            </button>
+            <button type="button" class="button brmedia-upload-tracklist" data-target="brmedia_tracklist"><?php _e( 'Upload .txt File', 'brmedia' ); ?></button>
         </p>
         <?php
     }
@@ -87,9 +85,7 @@ class BRMedia_Metaboxes {
         );
 
         foreach ( $fields as $form_field => $meta_key ) {
-            $value = ( $form_field === 'brmedia_tracklist' )
-                ? sanitize_textarea_field( $_POST[ $form_field ] ?? '' )
-                : sanitize_text_field( $_POST[ $form_field ] ?? '' );
+            $value = isset($_POST[ $form_field ]) ? sanitize_textarea_field( $_POST[ $form_field ] ) : '';
             update_post_meta( $post_id, $meta_key, $value );
         }
 
