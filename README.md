@@ -1,2 +1,0 @@
-# BRMedia
-Wordpress Plugin
