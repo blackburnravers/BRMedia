@@ -22,6 +22,10 @@ define('BRMEDIA_COMMON', BRMEDIA_PATH . 'includes/common/');
 define('BRMEDIA_TEMPLATES', BRMEDIA_PATH . 'templates/');
 define('BRMEDIA_PLUGIN_FILE', __FILE__);
 
+if (!defined('BRMEDIA_PLUGIN_URL')) {
+    define('BRMEDIA_PLUGIN_URL', plugin_dir_url(__FILE__));
+}
+
 // Load core plugin files
 require_once BRMEDIA_COMMON . 'class-brmedia-utils.php';
 require_once BRMEDIA_COMMON . 'class-brmedia-hooks.php';
