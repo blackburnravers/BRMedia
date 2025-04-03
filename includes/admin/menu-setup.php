@@ -38,6 +38,56 @@ function brmedia_register_admin_menu() {
         'brmedia-settings',
         'brmedia_settings_page'
     );
+    
+    // Music Section
+    add_submenu_page(
+        'brmedia-dashboard',
+        'Manage Music Entries',
+        'Manage Music',
+        'manage_options',
+        'edit.php?post_type=brmusic'
+    );
+
+    add_submenu_page(
+        'brmedia-dashboard',
+        'Add New Music',
+        'Add New Music',
+        'manage_options',
+        'post-new.php?post_type=brmusic'
+    );
+
+    add_submenu_page(
+        'brmedia-dashboard',
+        'Music Categories & Tags',
+        'Music Categories & Tags',
+        'manage_options',
+        'edit-tags.php?taxonomy=category&post_type=brmusic'
+    );
+
+    // Video Section
+    add_submenu_page(
+        'brmedia-dashboard',
+        'Manage Video Entries',
+        'Manage Video',
+        'manage_options',
+        'edit.php?post_type=brvideo'
+    );
+    
+    add_submenu_page(
+        'brmedia-dashboard',
+        'Add New Video',
+        'Add New Video',
+        'manage_options',
+        'post-new.php?post_type=brvideo'
+    );
+    
+    add_submenu_page(
+        'brmedia-dashboard',
+        'Video Categories & Tags',
+        'Video Categories & Tags',
+        'manage_options',
+        'edit-tags.php?taxonomy=category&post_type=brvideo'
+    );
 
     // Templates settings
     add_submenu_page(
