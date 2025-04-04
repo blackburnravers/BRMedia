@@ -2,48 +2,42 @@
 // Prevent direct access
 if (!defined('ABSPATH')) exit;
 
-/**
- * Add Templates Settings Page to the BRMedia Menu
- */
-function brmedia_add_templates_settings_page() {
-    add_submenu_page(
-        'brmedia-dashboard',
-        'BRMedia Templates',
-        'Templates',
-        'manage_options',
-        'brmedia-templates',
-        'brmedia_render_templates_settings'
-    );
-}
-add_action('admin_menu', 'brmedia_add_templates_settings_page');
+function brmedia_templates_page() {
+    $active_tab = isset($_GET['tab']) ? sanitize_text_field($_GET['tab']) : 'general';
 
-/**
- * Render the Templates Settings Page
- */
-function brmedia_render_templates_settings() {
-    $active_tab = isset($_GET['tab']) ? sanitize_text_field($_GET['tab']) : 'audio';
-    ?>
+    echo '<div class="wrap brmedia-admin">';
+    echo '<h1>BRMedia Templates</h1>';
 
-    <div class="wrap brmedia-admin-container">
-        <h1>BRMedia Templates Settings</h1>
+    echo '<nav class="nav-tab-wrapper">';
+    echo '<a href="?page=brmedia-templates&tab=general" class="nav-tab ' . ($active_tab === 'general' ? 'nav-tab-active' : '') . '">General Settings</a>';
+    echo '<a href="?page=brmedia-templates&tab=audio" class="nav-tab ' . ($active_tab === 'audio' ? 'nav-tab-active' : '') . '">Audio Templates</a>';
+    echo '<a href="?page=brmedia-templates&tab=video" class="nav-tab ' . ($active_tab === 'video' ? 'nav-tab-active' : '') . '">Video Templates</a>';
+    echo '</nav>';
 
-        <h2 class="nav-tab-wrapper">
-            <a href="?page=brmedia-templates&tab=audio" class="nav-tab <?php echo ($active_tab === 'audio') ? 'nav-tab-active' : ''; ?>">Audio Templates</a>
-            <a href="?page=brmedia-templates&tab=video" class="nav-tab <?php echo ($active_tab === 'video') ? 'nav-tab-active' : ''; ?>">Video Templates</a>
-        </h2>
+    echo '<div class="brmedia-tab-content">';
 
-        <div class="brmedia-tab-content">
-            <?php
-            if ($active_tab === 'audio') {
-                include plugin_dir_path(__FILE__) . 'templates-audio-settings.php';
-            } elseif ($active_tab === 'video') {
-                include plugin_dir_path(__FILE__) . 'templates-video-settings.php';
-            } else {
-                echo '<p>Invalid tab selection.</p>';
-            }
-            ?>
-        </div>
-    </div>
+    if ($active_tab === 'general') {
+        echo '<form method="post" action="options.php">';
+        settings_fields('brmedia_general_templates_group');
+        do_settings_sections('brmedia_general_templates');
+        submit_button();
+        echo '</form>';
+    }
 
-    <?php
+    if ($active_tab === 'audio') {
+        require_once plugin_dir_path(__FILE__) . 'templates-audio-settings.php';
+        if (function_exists('brmedia_audio_templates_content')) {
+            brmedia_audio_templates_content();
+        }
+    }
+
+    if ($active_tab === 'video') {
+        require_once plugin_dir_path(__FILE__) . 'templates-video-settings.php';
+        if (function_exists('brmedia_video_templates_content')) {
+            brmedia_video_templates_content();
+        }
+    }
+
+    echo '</div>';
+    echo '</div>';
 }
