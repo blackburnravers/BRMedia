@@ -1,0 +1,50 @@
+/* Base Admin Styling */
+.brmedia-admin-wrapper {
+    max-width: 1200px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    margin: 20px;
+}
+
+.brmedia-metabox-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 15px 0;
+}
+
+.brmedia-field label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #1d2327;
+}
+
+.brmedia-field input[type="text"],
+.brmedia-field select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #8c8f94;
+}
+
+/* Template Previews */
+.brmedia-template-preview {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.template-card {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 8px;
+    transition: transform 0.2s;
+}
+
+.template-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}

@@ -1,0 +1,10 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: BRMedia 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "BPM"
+msgstr ""
+
+msgid "Key"
+msgstr ""

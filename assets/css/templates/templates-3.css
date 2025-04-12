@@ -1,0 +1,45 @@
+.brmedia-player.template-card {
+    --card-width: 300px;
+    width: var(--card-width);
+    perspective: 1000px;
+}
+
+.template-card .card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.template-card .card-front,
+.template-card .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.template-card .card-back {
+    transform: rotateY(180deg);
+    background: #2c3e50;
+    padding: 1.5rem;
+}
+
+.template-card .cover-container {
+    position: relative;
+    aspect-ratio: 1;
+}
+
+.template-card .btn-play-overlay {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    background: rgba(0,0,0,0.7);
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}

@@ -1,0 +1,2 @@
+# Generate silent audio with FFmpeg
+ffmpeg -f lavfi -i anullsrc=r=44100:cl=stereo -t 0.1 -q:a 9 silence.mp3

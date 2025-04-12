@@ -1,0 +1,37 @@
+.brmedia-player.template-minimal {
+    background: transparent;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.template-minimal .minimal-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(255,255,255,0.05);
+    border-radius: 50px;
+}
+
+.template-minimal .btn-play-pause {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid currentColor;
+    background: transparent;
+}
+
+.template-minimal .title-artist {
+    flex-grow: 1;
+    min-width: 0;
+}
+
+.template-minimal .title {
+    font-weight: 600;
+    display: block;
+}
+
+.template-minimal .artist {
+    font-size: 0.9em;
+    opacity: 0.8;
+}
