@@ -1,0 +1,56 @@
+/* Base styles for BRMedia player */
+body {
+    overflow-x: hidden;
+}
+
+.brmedia-container, .brmedia-card, .brmedia-fullscreen {
+    font-family: Arial, sans-serif;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.brmedia-player {
+    margin-bottom: 20px;
+}
+
+.brmedia-metadata p {
+    margin: 5px 0;
+}
+
+.brmedia-tracklist {
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+.brmedia-tracklist pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.brmedia-controls button {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.brmedia-controls input[type="range"] {
+    vertical-align: middle;
+}
+
+/* Fullscreen Button Responsiveness */
+@media (max-width: 768px) {
+    .brmedia-controls button {
+        padding: 5px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .brmedia-controls button {
+        padding: 3px;
+        font-size: 12px;
+    }
+}
